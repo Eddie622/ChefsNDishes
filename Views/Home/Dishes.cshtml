@@ -1,0 +1,27 @@
+@model List<Dish>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<h1>Yum, Take A Look At Our Tasty Dishes!</h1>
+
+@{
+    <table class="table table-striped">
+        <tr>
+            <th>Dish Name</th>
+            <th>Dish Creator</th>
+            <th>Dish Tastiness</th>
+            <th>Dish Calories</th>
+        </tr>
+        @foreach(var Dish in @Model)
+            {
+                <tr>
+                    <td>@Dish.DishName</td>
+                    <td>@Dish.Creator.FirstName @Dish.Creator.LastName</td>
+                    <td>@Dish.Tastiness</td>
+                    <td>@Dish.Calories</td>
+                </tr>
+            }
+    </table>
+}

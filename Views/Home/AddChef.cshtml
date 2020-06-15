@@ -1,0 +1,23 @@
+@model Chef
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<h1>Add A Chef!</h1>
+
+<form asp-action="ProcessAddChef" asp-controller="Home" method="post">
+    <span asp-validation-for="FirstName"></span>
+    <label asp-for="FirstName"></label>
+    <input asp-for="FirstName"><br><br>
+
+    <span asp-validation-for="LastName"></span>
+    <label asp-for="LastName"></label>
+    <input asp-for="LastName"><br><br>
+
+    <span asp-validation-for="DateOfBirth"></span>
+    <label asp-for="DateOfBirth"></label>
+    <input asp-for="DateOfBirth"><br><br>
+
+    <input value="Add Chef" type="submit">    
+</form>
